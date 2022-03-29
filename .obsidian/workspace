@@ -1,0 +1,96 @@
+{
+  "main": {
+    "id": "f20df26043d75396",
+    "type": "split",
+    "children": [
+      {
+        "id": "5b44fbea8bcf46e0",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "OWASP TOP 10 - 2021.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "eff5e11337885aba",
+    "type": "split",
+    "children": [
+      {
+        "id": "308760f003bf9853",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "06dab02b4669b29e",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "89b176153859d89b",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "41270210fde29099",
+    "type": "split",
+    "children": [
+      {
+        "id": "1268b840f872d8bf",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2ec24584cdc6c8a8",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "OWASP TOP 10 - 2021.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "5b44fbea8bcf46e0",
+  "lastOpenFiles": [
+    "OWASP TOP 10 - 2021.md",
+    "SiberGüvenlikEğitimPaketiBTK Notlar.md",
+    "CompTIACyberSecurity/AttackTypes.md"
+  ]
+}

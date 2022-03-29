@@ -1,0 +1,2 @@
+# CyberSecurityNotes
+ siber güvenlik notları
