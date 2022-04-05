@@ -89,6 +89,7 @@ Injection zafiyetinin önlenmesi için,
 * [Injection Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Injection_Prevention_Cheat_Sheet.html)
 * [A Comprehensive Guide to Broken Access Control](https://www.prplbx.com/resources/blog/broken-access-control/)
 * [Local File İnclusion Nedir ?](https://murat-mdk64.medium.com/local-file-i%CC%87nclusion-nedir-9afd23473405)
+* [OWASP Top 10 for Web ](https://application.security/free/owasp-top-10)
 * 
 
 
