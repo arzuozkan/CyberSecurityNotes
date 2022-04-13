@@ -1,2 +1,2 @@
 # CyberSecurityNotes
- siber güvenlik notları
+siber güvenlik ve güncel gelişmeleri takip ederken aldığım notlar
